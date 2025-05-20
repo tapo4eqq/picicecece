@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конфигуратор ПК</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <div class="back-to-home">
+        <a href="index.html">На главную</a>
+    </div>
+    <div class="logo">IntelligentPC</div>
+    <div class="contact-info">
+        <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+    </div>
+</header>
+
+<body>
+    <div class="container">
+        <h1>Конфигуратор сборки компьютера</h1>
+        
+        <div class="configurator">
+            <div class="components-section">
+                <div class="component-category">
+                    <h2>Процессор</h2>
+                    <select id="cpu-select">
+                        <option value="" disabled selected>Выберите процессор</option>
+                        <!-- Опции будут заполняться через JS -->
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Материнская плата</h2>
+                    <select id="mobo-select">
+                        <option value="" disabled selected>Выберите материнскую плату</option>
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Видеокарта</h2>
+                    <select id="gpu-select">
+                        <option value="" disabled selected>Выберите видеокарту</option>
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Оперативная память</h2>
+                    <select id="ram-select">
+                        <option value="" disabled selected>Выберите оперативную память</option>
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Накопитель</h2>
+                    <select id="storage-select">
+                        <option value="" disabled selected>Выберите накопитель</option>
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Блок питания</h2>
+                    <select id="psu-select">
+                        <option value="" disabled selected>Выберите блок питания</option>
+                    </select>
+                </div>
+
+                <div class="component-category">
+                    <h2>Корпус</h2>
+                    <select id="case-select">
+                        <option value="" disabled selected>Выберите корпус</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="summary-section">
+                <h2>Ваша сборка</h2>
+                <div id="build-summary">
+                    <p>Выберите компоненты для отображения сборки</p>
+                </div>
+                <div class="total-price">
+                    <h3>Итого: <span id="total-price">0</span> ₽</h3>
+                </div>
+                <button id="save-build">Сохранить сборку</button>
+                <div id="saved-builds">
+                    <h3>Сохранённые сборки</h3>
+                    <ul id="saved-builds-list"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="config.js"></script>
+</body>
+</html>

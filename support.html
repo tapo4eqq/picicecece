@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Поддержка - IntelligentPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">IntelligentPC</div>
+        <div class="contact-info">
+            <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="support.html">Поддержка</a>
+        <a href="servers.html">Серверы</a>
+        <a href="services.html">Услуги</a>
+    </nav>
+
+    <main>
+        <div class="right-column">
+            <h2 class="page-title">Поддержка</h2>
+            <div class="content-section">
+                <p>Здесь будет информация о технической поддержке, ответы на часто задаваемые вопросы и контактная форма...</p>
+            </div>
+        </div>
+        <div class="right-column">
+            <h2 class="page-title">Обратная связь</h2>
+            <div class="content-section">
+                <p>Пожалуйста, заполните форму ниже, чтобы связаться с нами:</p>
+                <form
+  action="https://formspree.io/f/mzzrjzpq"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
+  <!-- your other form fields go here -->
+  <button type="submit">Send</button>
+</form>
+                <div id="form-result"></div>
+            </div>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html">На главную</a>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

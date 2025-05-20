@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IntelligentPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">IntelligentPC</div>
+        <div class="contact-info">
+
+        </div>
+    </header>
+
+    <nav>
+        <a href="support.html">Поддержка</a>
+        <a href="servers.html">Серверы</a>
+        <a href="services.html">Услуги</a>
+        
+    </nav>
+
+    <main>
+        <div class="left-column">
+            <div class="category-block">
+                <h3>Сборки компьютеров</h3>
+                <ul>
+                    <li><a href="config.html">Конфигуратор</a></li>
+                    <li><a href="sborki v nalichii.html">Сборки в наличии</a></li>
+                </ul>
+            </div>
+
+            <div class="category-block">
+                <h3>Подобрать под</h3>
+                <ul>
+                    <li><a href="gaming.html">Под игры</a></li>
+                    <li><a href="school.html">Под учебу</a></li>
+                    <li><a href="streaming.html">Для стриминга</a></li>
+                </ul>
+            </div>
+
+            <div class="category-block">
+                <h3>Подобрать по цене</h3>
+                <ul>
+                    <li><a href="upto150k.html">до 150.000</a></li>
+                    <li><a href="upto250k.html">до 250.000</a></li>
+                    <li><a href="upto500k.html">до 500.000</a></li>
+                    <li><a href="upto750k.html">до 750.000</a></li>
+                    <li><a href="upto1m.html">до 1.000.000</a></li>
+                    <li><a href="overto1m.html">свыше 1.000.000</a></li>
+                </ul>
+            </div>
+
+        </div>
+      <div class="right-column">
+    <div class="services-block">
+        <a href="gaming.html" class="service-item-link">
+            <div class="service-item">
+                <img src="pic/aligator.png" alt="Для игр">
+                подобрать компьютер для игр
+            </div>
+        </a>
+        <a href="school.html" class="service-item-link">
+            <div class="service-item">
+                <img src="pic/forhome.png" alt="Для учебы">
+                Подобрать компьютер для учебы
+            </div>
+        </a>
+        <a href="config.html" class="service-item-link">
+            <div class="service-item">
+                <img src="pic/confindex.png" alt="Настройка конфигурации">
+                Также вы можете создать свою конфигурацию компьютера
+            </div>
+        </a>
+    </div>
+</div>
+
+    </main>
+    <footer>
+        <div class="contact-info">
+            <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+        </div>
+        <!-- Добавляем элемент для отображения счетчика -->
+        <div id="counter">Количество посещений: Загрузка...</div>
+    </footer>
+    <script src="app.js"></script>
+
+     <script>
+        // Получаем счетчик из localStorage
+        let visitCount = localStorage.getItem('visitCount');
+
+        // Если счетчика нет, устанавливаем значение 1
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            // Если счетчик есть, увеличиваем его на 1
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        // Сохраняем новое значение счетчика в localStorage
+        localStorage.setItem('visitCount', visitCount);
+
+        // Отображаем счетчик на странице
+        document.getElementById('counter').textContent = 'Количество посещений (в этом браузере): ' + visitCount;
+
+        // Функция для очистки корзины
+        function clearCart() {
+            // Очищаем localStorage
+            localStorage.removeItem('cartItems');
+
+            // Очищаем отображение корзины на странице
+            const cartItemsList = document.getElementById('cart-items');
+            cartItemsList.innerHTML = ''; // Удаляем все элементы из списка
+
+            // Обновляем итоговую сумму
+            updateCartTotal();
+        }
+
+        // Привязываем функцию к кнопке (убедитесь, что DOM загружен)
+        document.addEventListener('DOMContentLoaded', function() {
+            const clearCartButton = document.getElementById('clear-cart-button');
+            if (clearCartButton) {
+                clearCartButton.addEventListener('click', clearCart);
+            } else {
+                console.error("Кнопка 'Очистить корзину' не найдена!");
+            }
+
+            // Загружаем товары из корзины при загрузке страницы
+            loadCartItems();
+
+             // Обновляем итоговую сумму при загрузке страницы
+            updateCartTotal();
+        });
+
+         // Функция для обновления итоговой суммы
+        function updateCartTotal() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.price;
+            });
+
+            document.getElementById('cart-total').textContent = 'Итого: ' + total + ' руб.';
+        }
+
+        // Функция для загрузки товаров из корзины и отображения на странице
+        function loadCartItems() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsList = document.getElementById('cart-items');
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item.name + ' - ' + item.price + ' руб.';
+                cartItemsList.appendChild(listItem);
+            });
+        }
+
+    </script>
+</body>
+
+</html>

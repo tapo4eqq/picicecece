@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - IntelligentPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="back-to-home">
+            <a href="index.html">На главную</a>
+            </div>
+        <div class="logo">IntelligentPC</div>
+        <div class="contact-info">
+            <!-- Контактная информация может быть здесь -->
+        </div>
+    </header>
+
+    <nav>
+        <a href="support.html">Поддержка</a>
+        <a href="servers.html">Серверы</a>
+        <a href="services.html">Услуги</a>
+
+    </nav>
+
+    <main>
+        <div class="left-column">
+            <div class="category-block">
+                <h3>Сборки компьютеров</h3>
+                <ul>
+                    <li><a href="config.html">Конфигуратор</a></li>
+                    <li><a href="sborki v nalichii.html">Сборки в наличии</a></li>
+                </ul>
+            </div>
+
+            <div class="category-block">
+                <h3>Подобрать под</h3>
+                <ul>
+                    <li><a href="gaming.html">Под игры</a></li>
+                    <li><a href="school.html">Под учебу</a></li>
+                    <li><a href="streaming.html">Для стриминга</a></li>
+                </ul>
+            </div>
+
+            <div class="category-block">
+                <h3>Подобрать по цене</h3>
+                <ul>
+                    <li><a href="upto150k.html">до 150.000</a></li>
+                    <li><a href="upto250k.html">до 250.000</a></li>
+                    <li><a href="upto500k.html">до 500.000</a></li>
+                    <li><a href="upto750k.html">до 750.000</a></li>
+                    <li><a href="upto1m.html">до 1.000.000</a></li>
+                    <li><a href="overto1m.html">свыше 1.000.000</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="right-column">
+            <h2>Наши Услуги</h2>
+            <div class="services-block">
+                <div class="service-item">
+                    <img src="pic/sborka.png" alt="Сборка ПК">
+                    <h3>Сборка ПК на заказ</h3>
+                    <p>Профессиональная сборка компьютера любой сложности, учитывая ваши требования и бюджет.  Тщательный подбор комплектующих, оптимальная настройка и тестирование.</p>
+                    <span class="price">от 5000 ₽</span>
+                    <a href="" class="order-button">Заказать</a>
+                </div>
+
+                <div class="service-item">
+                    <img src="pic/upgrade.png" alt="Апгрейд ПК">
+                    <h3>Апгрейд (Модернизация) ПК</h3>
+                    <p>Улучшение производительности вашего текущего компьютера путем замены устаревших компонентов.  Оптимизация под современные задачи и игры.</p>
+                    <span class="price">от 3000 ₽</span>
+                    <a href="#" class="order-button">Заказать</a>
+                </div>
+
+                <div class="service-item">
+                    <img src="pic/diag.png" alt="Диагностика ПК">
+                    <h3>Диагностика и Ремонт ПК</h3>
+                    <p>Выявление и устранение неисправностей в работе компьютера.  Профессиональная диагностика, замена комплектующих, восстановление данных.</p>
+                    <span class="price">от 2000 ₽</span>
+                    <a href="#" class="order-button">Заказать</a>
+                </div>
+
+                 <div class="service-item">
+                    <img src="pic/anti.png" alt="Установка ПО">
+                    <h3>Установка и Настройка ПО</h3>
+                    <p>Установка операционных систем, драйверов, программного обеспечения.  Настройка для оптимальной производительности и безопасности.</p>
+                    <span class="price">от 1500 ₽</span>
+                    <a href="#" class="order-button">Заказать</a>
+                </div>
+
+                 <div class="service-item">
+                    <img src="pic/clean.png" alt="Чистка ПК">
+                    <h3>Чистка ПК от пыли</h3>
+                    <p>Очистка системы охлаждения от пыли, замена термопасты. Предотвращение перегрева и повышение стабильности работы.</p>
+                    <span class="price">от 1000 ₽</span>
+                    <a href="#" class="order-button">Заказать</a>
+                </div>
+
+                <div class="service-item">
+                    <img src="pic/revive.png" alt="Восстановление данных">
+                    <h3>Восстановление данных</h3>
+                    <p>Восстановление утерянных или поврежденных данных с жестких дисков, SSD, USB-накопителей и других носителей информации.</p>
+                    <span class="price">Цена договорная</span>
+                    <a href="#" class="order-button">Заказать</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+        </div>
+        <div id="counter">Количество посещений: Загрузка...</div>
+    </footer>
+    <script src="app.js"></script>
+
+    <script>
+        let visitCount = localStorage.getItem('visitCount');
+
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('counter').textContent = 'Количество посещений (в этом браузере): ' + visitCount;
+
+        function clearCart() {
+            localStorage.removeItem('cartItems');
+            const cartItemsList = document.getElementById('cart-items');
+            cartItemsList.innerHTML = '';
+            updateCartTotal();
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const clearCartButton = document.getElementById('clear-cart-button');
+            if (clearCartButton) {
+                clearCartButton.addEventListener('click', clearCart);
+            } else {
+                console.error("Кнопка 'Очистить корзину' не найдена!");
+            }
+            loadCartItems();
+            updateCartTotal();
+        });
+
+        function updateCartTotal() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            let total = 0;
+            cartItems.forEach(item => {
+                total += item.price;
+            });
+            document.getElementById('cart-total').textContent = 'Итого: ' + total + ' руб.';
+        }
+
+        function loadCartItems() {
+            let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+            const cartItemsList = document.getElementById('cart-items');
+
+            cartItems.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.textContent = item.name + ' - ' + item.price + ' руб.';
+                cartItemsList.appendChild(listItem);
+            });
+        }
+    </script>
+</body>
+
+</html>

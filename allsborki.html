@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Все сборки компьютеров - IntelligentPC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="back-to-home">
+            <a href="index.html">На главную</a>
+        </div>
+        <div class="logo">IntelligentPC</div>
+        <div class="contact-info">
+            <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+        </div>
+    </header>
+
+    <nav>
+        <a href="assemblies.html">Сборки компьютеров</a>
+        <a href="support.html">Поддержка</a>
+        <a href="servers.html">Серверы</a>
+        <a href="services.html">Услуги</a>
+        <a href="contact.html">Обратная связь</a>
+    </nav>
+
+    <main>
+        <div class="right-column">
+            <h2 class="page-title">Все сборки компьютеров</h2>
+            <div class="content-section">
+                <p>Здесь представлены все сборки компьютеров, доступные в нашем магазине.</p>
+            </div>
+
+            <div class="product-list">
+                <!-- Пример карточки товара (добавьте свои товары) -->
+                <div class="product-card">
+                    <img src="" alt="Игровой компьютер 'Молния'">
+                    <h3>Игровой компьютер "Молния"</h3>
+                    <p>Мощный игровой компьютер для самых требовательных геймеров!</p>
+                    <p>Цена: 120000 руб.</p>
+                    <button data-id="all-1" data-name="Игровой компьютер 'Молния'" data-price="120000">В корзину</button>
+                </div>
+                <!-- Добавьте другие карточки товаров здесь -->
+                <div class="product-card">
+                    <img src="" alt="Рабочая станция 'Титан'">
+                    <h3>Рабочая станция "Титан"</h3>
+                    <p>Профессиональная рабочая станция для эффективной работы.</p>
+                    <p>Цена: 180000 руб.</p>
+                    <button data-id="all-2" data-name="Рабочая станция 'Титан'" data-price="180000">В корзину</button>
+                </div>
+                 <!-- Добавьте другие карточки товаров здесь -->
+                 <div class="product-card">
+                    <img src="" alt="Бюджетный компьютер 'Офис'">
+                    <h3>Бюджетный компьютер "Офис"</h3>
+                    <p>Надежный компьютер для офисных задач и учебы.</p>
+                    <p>Цена: 50000 руб.</p>
+                    <button data-id="all-3" data-name="Бюджетный компьютер 'Офис'" data-price="50000">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <aside id="cart">
+        <h2>Корзина</h2>
+        <ul id="cart-items">
+            <!-- Здесь будут добавляться товары -->
+        </ul>
+        <div id="cart-total">
+            Итого: 0 руб.
+        </div>
+    </aside>
+
+    <footer>
+        <div class="contact-info">
+            <span class="phone">+7 (962) 910-91-44 (г.Москва, Ленинский проспект 45)</span>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
